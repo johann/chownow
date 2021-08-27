@@ -7,12 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F1E3C8926D87BC000FE5203 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1E3C8826D87BC000FE5203 /* Colors.swift */; };
+		8F1E3C8C26D93EB600FE5203 /* TestingURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1E3C8B26D93EB600FE5203 /* TestingURLProtocol.swift */; };
+		8F1E3C8E26D93F0A00FE5203 /* CompanyTestingURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1E3C8D26D93F0A00FE5203 /* CompanyTestingURLProtocol.swift */; };
 		8F6EFF4B26D726C900D5F132 /* chowNowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6EFF4A26D726C900D5F132 /* chowNowApp.swift */; };
 		8F6EFF4D26D726C900D5F132 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6EFF4C26D726C900D5F132 /* ContentView.swift */; };
 		8F6EFF4F26D726CA00D5F132 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F6EFF4E26D726CA00D5F132 /* Assets.xcassets */; };
 		8F6EFF5226D726CA00D5F132 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F6EFF5126D726CA00D5F132 /* Preview Assets.xcassets */; };
 		8F6EFF5D26D726CA00D5F132 /* chowNowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6EFF5C26D726CA00D5F132 /* chowNowTests.swift */; };
 		8F6EFF6826D726CA00D5F132 /* chowNowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6EFF6726D726CA00D5F132 /* chowNowUITests.swift */; };
+		8F6EFF7626D7323E00D5F132 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6EFF7526D7323E00D5F132 /* ApiClient.swift */; };
+		8F6EFF7926D7453800D5F132 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6EFF7826D7453800D5F132 /* Company.swift */; };
+		8F6EFF7B26D7457500D5F132 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6EFF7A26D7457500D5F132 /* Location.swift */; };
+		8F6EFF7D26D74A2A00D5F132 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6EFF7C26D74A2A00D5F132 /* Address.swift */; };
+		8F6EFF8026D769AC00D5F132 /* CompanyLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6EFF7F26D769AC00D5F132 /* CompanyLocationViewModel.swift */; };
+		8F6EFF8326D76A0F00D5F132 /* LocationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6EFF8226D76A0F00D5F132 /* LocationListView.swift */; };
+		8F6EFF8526D76DD700D5F132 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6EFF8426D76DD700D5F132 /* LocationDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F1E3C8826D87BC000FE5203 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		8F1E3C8B26D93EB600FE5203 /* TestingURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingURLProtocol.swift; sourceTree = "<group>"; };
+		8F1E3C8D26D93F0A00FE5203 /* CompanyTestingURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTestingURLProtocol.swift; sourceTree = "<group>"; };
 		8F6EFF4726D726C900D5F132 /* chowNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chowNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F6EFF4A26D726C900D5F132 /* chowNowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chowNowApp.swift; sourceTree = "<group>"; };
 		8F6EFF4C26D726C900D5F132 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +58,13 @@
 		8F6EFF6326D726CA00D5F132 /* chowNowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chowNowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F6EFF6726D726CA00D5F132 /* chowNowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chowNowUITests.swift; sourceTree = "<group>"; };
 		8F6EFF6926D726CA00D5F132 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F6EFF7526D7323E00D5F132 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		8F6EFF7826D7453800D5F132 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		8F6EFF7A26D7457500D5F132 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		8F6EFF7C26D74A2A00D5F132 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		8F6EFF7F26D769AC00D5F132 /* CompanyLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyLocationViewModel.swift; sourceTree = "<group>"; };
+		8F6EFF8226D76A0F00D5F132 /* LocationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListView.swift; sourceTree = "<group>"; };
+		8F6EFF8426D76DD700D5F132 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +92,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F1E3C8726D87BB500FE5203 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				8F1E3C8826D87BC000FE5203 /* Colors.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		8F1E3C8A26D8D24000FE5203 /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				8F6EFF7526D7323E00D5F132 /* ApiClient.swift */,
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
 		8F6EFF3E26D726C900D5F132 = {
 			isa = PBXGroup;
 			children = (
@@ -95,8 +131,12 @@
 		8F6EFF4926D726C900D5F132 /* chowNow */ = {
 			isa = PBXGroup;
 			children = (
+				8F1E3C8A26D8D24000FE5203 /* APIClient */,
+				8F1E3C8726D87BB500FE5203 /* Colors */,
+				8F6EFF8126D769F300D5F132 /* VIews */,
+				8F6EFF7E26D7698F00D5F132 /* ViewModels */,
+				8F6EFF7726D7452C00D5F132 /* Models */,
 				8F6EFF4A26D726C900D5F132 /* chowNowApp.swift */,
-				8F6EFF4C26D726C900D5F132 /* ContentView.swift */,
 				8F6EFF4E26D726CA00D5F132 /* Assets.xcassets */,
 				8F6EFF5326D726CA00D5F132 /* Info.plist */,
 				8F6EFF5026D726CA00D5F132 /* Preview Content */,
@@ -117,6 +157,8 @@
 			children = (
 				8F6EFF5C26D726CA00D5F132 /* chowNowTests.swift */,
 				8F6EFF5E26D726CA00D5F132 /* Info.plist */,
+				8F1E3C8B26D93EB600FE5203 /* TestingURLProtocol.swift */,
+				8F1E3C8D26D93F0A00FE5203 /* CompanyTestingURLProtocol.swift */,
 			);
 			path = chowNowTests;
 			sourceTree = "<group>";
@@ -128,6 +170,34 @@
 				8F6EFF6926D726CA00D5F132 /* Info.plist */,
 			);
 			path = chowNowUITests;
+			sourceTree = "<group>";
+		};
+		8F6EFF7726D7452C00D5F132 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8F6EFF7826D7453800D5F132 /* Company.swift */,
+				8F6EFF7A26D7457500D5F132 /* Location.swift */,
+				8F6EFF7C26D74A2A00D5F132 /* Address.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8F6EFF7E26D7698F00D5F132 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8F6EFF7F26D769AC00D5F132 /* CompanyLocationViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8F6EFF8126D769F300D5F132 /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+				8F6EFF4C26D726C900D5F132 /* ContentView.swift */,
+				8F6EFF8226D76A0F00D5F132 /* LocationListView.swift */,
+				8F6EFF8426D76DD700D5F132 /* LocationDetailView.swift */,
+			);
+			path = VIews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +329,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F6EFF7D26D74A2A00D5F132 /* Address.swift in Sources */,
+				8F1E3C8926D87BC000FE5203 /* Colors.swift in Sources */,
+				8F6EFF7926D7453800D5F132 /* Company.swift in Sources */,
 				8F6EFF4D26D726C900D5F132 /* ContentView.swift in Sources */,
+				8F6EFF7B26D7457500D5F132 /* Location.swift in Sources */,
 				8F6EFF4B26D726C900D5F132 /* chowNowApp.swift in Sources */,
+				8F6EFF8026D769AC00D5F132 /* CompanyLocationViewModel.swift in Sources */,
+				8F6EFF8326D76A0F00D5F132 /* LocationListView.swift in Sources */,
+				8F6EFF8526D76DD700D5F132 /* LocationDetailView.swift in Sources */,
+				8F6EFF7626D7323E00D5F132 /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +346,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F1E3C8E26D93F0A00FE5203 /* CompanyTestingURLProtocol.swift in Sources */,
+				8F1E3C8C26D93EB600FE5203 /* TestingURLProtocol.swift in Sources */,
 				8F6EFF5D26D726CA00D5F132 /* chowNowTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
