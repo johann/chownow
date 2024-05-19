@@ -5,55 +5,86 @@
 //  Created by Johann Kerr on 8/25/21.
 //
 
-import SwiftUI
 import MapKit
+import SwiftUI
 
 struct LocationDetailView: View {
     var location: Location
-    @State private var region: MKCoordinateRegion? = nil
-    var coordinate: CLLocationCoordinate2D?
+
+    private var position: MapCameraPosition {
+        MapCameraPosition.region(
+            MKCoordinateRegion(
+                center: CLLocationCoordinate2D(
+                    latitude: location.address.latitude,longitude: location.address.longitude),
+                span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+            )
+        )
+    }
 
     var body: some View {
+        ScrollView(.vertical) {
+            VStack(alignment: .leading, spacing: 20) {
+                mapView
 
-        let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: location.address.latitude, longitude: location.address.longitude)
-
-        let binding = Binding(get: {
-            return MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-        }, set: {
-            self.region = $0
-        })
-
-        return
-            VStack {
-                VStack(alignment: .leading, spacing: 20) {
-                    Map(coordinateRegion: binding, annotationItems: [location]) { location in
-                        MapPin(coordinate: coordinate)
-                    }
-                    .frame(height: 200)
-                    HStack {
-                        Text("Address:")
-                        Spacer()
-                        Text(location.address.formattedAddress)
-                    }
-                    .padding(.horizontal, 20)
-                    HStack {
-                        Text("Phone:")
-                        Spacer()
-                        Link(location.phone, destination: URL(string: "tel:\(location.phone)")!)
-                    }
-                    .padding(.horizontal, 20)
-                    VStack(alignment: .leading) {
-                        Text("Cuisines")
-                        ForEach(location.cuisines, id: \.self) { cuisine in
-                            Text(cuisine)
-                        }
-
-                    }
-                    .padding(.horizontal, 20)
+                HStack {
+                    Text("Address:")
+                    Spacer()
+                    Text(location.address.formattedAddress)
                 }
-                Spacer()
+
+                HStack {
+                    Text("Phone:")
+                    Spacer()
+                    Link(location.formattedPhoneNumber, destination: URL(string: "tel:\(location.phone)")!)
+                }
+
+                VStack(alignment: .leading) {
+                    Text("Cuisines:")
+                    ForEach(location.cuisines, id: \.self) { cuisine in
+                        Text(cuisine)
+                    }
+
+                }
             }
-            .navigationBarTitle(location.name ?? "", displayMode: .inline)
+            .padding(.horizontal, 20)
+
+            Spacer()
+        }
+        .navigationBarTitle(location.name ?? "", displayMode: .inline)
+    }
+
+    var mapView: some View {
+        Map(initialPosition: position, interactionModes: [.rotate, .zoom])
+            {
+
+                Annotation(
+                    location.name ?? "",
+                    coordinate: CLLocationCoordinate2D(
+                        latitude: location.address.latitude,
+                        longitude: location.address.longitude
+                    )
+                ) {
+
+                    VStack(spacing: 0) {
+                        Circle()
+                            .fill(Color.white)
+                            .frame(width: 30, height: 30)
+                            .overlay(
+                                Image(systemName: "tag.fill")
+                                    .resizable()
+                                    .foregroundStyle(Color.frosting)
+                                    .frame(width: 20, height: 20)
+                            )
+
+                        Text(location.name ?? "")
+                            .font(.caption2)
+                            .foregroundStyle(Color.squidInk)
+                    }
+                }
+                .annotationTitles(.hidden)
+            }
+            .mapStyle(.standard)
+            .frame(height: 350)
     }
 }
 
