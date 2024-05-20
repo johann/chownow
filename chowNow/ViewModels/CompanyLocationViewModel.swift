@@ -31,17 +31,21 @@ class CompanyLocationViewModel: ObservableObject {
     }
 
     // MARK: Private
+
     private func fetchCompany() {
         state = .loading
         Task {
             do {
                 let company = try await ApiClient().fetchCompany(for: defaultCompanyId)
-                DispatchQueue.main.async {
-                    self.state = .loaded(company)
-                }
+                await updateViewModel(company)
             } catch {
                 self.state = .error(error)
             }
         }
+    }
+
+    @MainActor
+    private func updateViewModel(_ company: Company) {
+        state = .loaded(company)
     }
 }
