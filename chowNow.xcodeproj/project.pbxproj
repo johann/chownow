@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8F1E3C8926D87BC000FE5203 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1E3C8826D87BC000FE5203 /* Colors.swift */; };
 		8F1E3C8C26D93EB600FE5203 /* TestingURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1E3C8B26D93EB600FE5203 /* TestingURLProtocol.swift */; };
 		8F1E3C8E26D93F0A00FE5203 /* CompanyTestingURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F1E3C8D26D93F0A00FE5203 /* CompanyTestingURLProtocol.swift */; };
 		8F6EFF4B26D726C900D5F132 /* chowNowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6EFF4A26D726C900D5F132 /* chowNowApp.swift */; };
@@ -24,6 +23,7 @@
 		8F6EFF8326D76A0F00D5F132 /* LocationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6EFF8226D76A0F00D5F132 /* LocationListView.swift */; };
 		8F6EFF8526D76DD700D5F132 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6EFF8426D76DD700D5F132 /* LocationDetailView.swift */; };
 		8FCDE5CB26D941D0007F8B1E /* APIClient+CompanyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCDE5CA26D941D0007F8B1E /* APIClient+CompanyTests.swift */; };
+		C10FD8492BFB0E5000CC0BC5 /* LocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10FD8482BFB0E5000CC0BC5 /* LocationMapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +44,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8F1E3C8826D87BC000FE5203 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		8F1E3C8B26D93EB600FE5203 /* TestingURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingURLProtocol.swift; sourceTree = "<group>"; };
 		8F1E3C8D26D93F0A00FE5203 /* CompanyTestingURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTestingURLProtocol.swift; sourceTree = "<group>"; };
 		8F6EFF4726D726C900D5F132 /* chowNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chowNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +66,7 @@
 		8F6EFF8226D76A0F00D5F132 /* LocationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListView.swift; sourceTree = "<group>"; };
 		8F6EFF8426D76DD700D5F132 /* LocationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		8FCDE5CA26D941D0007F8B1E /* APIClient+CompanyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIClient+CompanyTests.swift"; sourceTree = "<group>"; };
+		C10FD8482BFB0E5000CC0BC5 /* LocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,14 +94,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8F1E3C8726D87BB500FE5203 /* Colors */ = {
-			isa = PBXGroup;
-			children = (
-				8F1E3C8826D87BC000FE5203 /* Colors.swift */,
-			);
-			path = Colors;
-			sourceTree = "<group>";
-		};
 		8F1E3C8A26D8D24000FE5203 /* APIClient */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				8F1E3C8A26D8D24000FE5203 /* APIClient */,
-				8F1E3C8726D87BB500FE5203 /* Colors */,
 				8F6EFF8126D769F300D5F132 /* VIews */,
 				8F6EFF7E26D7698F00D5F132 /* ViewModels */,
 				8F6EFF7726D7452C00D5F132 /* Models */,
@@ -199,6 +190,7 @@
 				8F6EFF4C26D726C900D5F132 /* ContentView.swift */,
 				8F6EFF8226D76A0F00D5F132 /* LocationListView.swift */,
 				8F6EFF8426D76DD700D5F132 /* LocationDetailView.swift */,
+				C10FD8482BFB0E5000CC0BC5 /* LocationMapView.swift */,
 			);
 			path = VIews;
 			sourceTree = "<group>";
@@ -334,11 +326,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F6EFF7D26D74A2A00D5F132 /* Address.swift in Sources */,
-				8F1E3C8926D87BC000FE5203 /* Colors.swift in Sources */,
 				8F6EFF7926D7453800D5F132 /* Company.swift in Sources */,
 				8F6EFF4D26D726C900D5F132 /* ContentView.swift in Sources */,
 				8F6EFF7B26D7457500D5F132 /* Location.swift in Sources */,
 				8F6EFF4B26D726C900D5F132 /* chowNowApp.swift in Sources */,
+				C10FD8492BFB0E5000CC0BC5 /* LocationMapView.swift in Sources */,
 				8F6EFF8026D769AC00D5F132 /* CompanyLocationViewModel.swift in Sources */,
 				8F6EFF8326D76A0F00D5F132 /* LocationListView.swift in Sources */,
 				8F6EFF8526D76DD700D5F132 /* LocationDetailView.swift in Sources */,

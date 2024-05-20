@@ -13,7 +13,6 @@ final class ApiClient {
 
     // MARK: Properties
     private let urlSession: URLSession
-    private var cancellable: AnyCancellable?
 
     // MARK: Initialization
     init(networkServices: [AnyClass]? = nil) {
@@ -25,32 +24,19 @@ final class ApiClient {
         self.urlSession = URLSession(configuration: configuration)
     }
 
-    public func fetchCompany(for id: Int) -> AnyPublisher<Company, Error> {
+    public func fetchCompany(for id: Int) async throws -> Company {
         let url = url(for: id)
         let request = URLRequest(url: url)
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
 
-        let resourcePublisher = urlSession.dataTaskPublisher(for: request)
-            .tryMap { output in
-                guard let response = output.response as? HTTPURLResponse, response.statusCode == 200 else {
-                    // throw error
-                    throw APIClientError.networkResponseError
-                }
-                
-                return output.data
-            }
-            .decode(type: Company.self, decoder: decoder)
-            .eraseToAnyPublisher()
+        let (data, response) = try await urlSession.data(for: request)
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw APIClientError.networkResponseError
+        }
 
-        cancellable = resourcePublisher.sink(receiveCompletion: {
-            print("Received completion 1: \($0).")
-        }, receiveValue: {_ in
-
-        })
-
-        return resourcePublisher
-
+        let company = try decoder.decode(Company.self, from: data)
+        return company
     }
 
     private func url(for companyId: Int) -> URL {

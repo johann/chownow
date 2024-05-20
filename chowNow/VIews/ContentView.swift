@@ -5,27 +5,66 @@
 //  Created by Johann Kerr on 8/25/21.
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var viewModel = CompanyLocationViewModel()
+
+    // MARK: Propertes
+    @StateObject var viewModel = CompanyLocationViewModel()
+
     var body: some View {
-        if (viewModel.company != nil) {
-            companyListView
-        } else {
-            ProgressView()
-                .progressViewStyle(CircularProgressViewStyle(tint: .gojiBerry))
+        switch viewModel.state {
+        case .loading:
+            loading
+        case .loaded(let company):
+            LocationListView(company: company)
+        case .error(let error):
+            retryButton(error)
         }
     }
 
-    private var companyListView: some View {
-        viewModel.company.map(LocationListView.init)
+    // MARK: Private
+    private var loading: some View {
+        VStack(spacing: 4) {
+            ProgressView()
+                .progressViewStyle(CircularProgressViewStyle(tint: .gojiBerry))
+            Text("Loading Company")
+                .foregroundStyle(Color.gojiBerry)
+        }
+    }
+
+    private func retryButton(_ error: Error) -> some View {
+        VStack {
+            Text(error.localizedDescription)
+                .foregroundStyle(.gojiBerry)
+
+            Button {
+                viewModel.retry()
+            } label: {
+                Label(
+                    title: {
+                        Text("Retry")
+                            .fontWeight(.semibold)
+                            .font(.body)
+                    },
+                    icon: {
+                        Image(systemName: "arrow.clockwise")
+                            .font(.body)
+                    }
+                )
+                .padding()
+                .foregroundColor(.white)
+                .background(.gojiBerry)
+                .cornerRadius(40)
+            }
+
+            Spacer()
+        }
+        .padding(.top, 24)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }

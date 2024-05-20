@@ -7,11 +7,17 @@
 
 import Foundation
 
-struct Location: Codable {
+struct Location: Codable, Identifiable {
     var address: Address
     var name: String?
     var phone: String
     var cuisines: [String] = []
+    var id: String
+    var media: CoverImage?
+
+    struct CoverImage: Codable {
+        var coverImageUrl: String
+    }
 
     var formattedPhoneNumber: String {
         let areaCode = String(phone.prefix(3))
@@ -26,11 +32,5 @@ struct Location: Codable {
             lineNumber
         )
         return formattedPhone
-    }
-}
-
-extension Location: Identifiable {
-    var id: Int {
-        return address.id
     }
 }

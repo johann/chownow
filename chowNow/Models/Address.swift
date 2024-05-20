@@ -12,4 +12,5 @@ struct Address: Codable {
     var formattedAddress: String
     var latitude: Double
     var longitude: Double
+    var city: String
 }

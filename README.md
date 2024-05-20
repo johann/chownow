@@ -2,11 +2,11 @@
 
 # Requirements
 
-- Xcode 12 or later
+- Xcode 16 or later
 
 # Compatability
 
-- Requires iOS 14.0 or later.
+- Requires iOS 17.0 or later.
 
 # Usage
 
@@ -18,9 +18,6 @@ The app architecture is centered around using an ObservableObject in a ViewModel
 
 
 ## Future improvements
-- Better UI (eg MapView, Search etc)
-- More data
-- More Testing!
 - Some animations to improve the user experience
 
 
